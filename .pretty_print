@@ -1,0 +1,108 @@
+have_tty()
+{
+    # return success if both stdin and stdout are tty
+    local ret=1
+    if [[ -t 0 && -t 1 ]] ; then
+        ret=0
+    fi
+    return "$ret"
+}
+
+# some colors
+_NC=""
+
+_RED=""
+_BRED=""
+_URED=""
+
+_GREEN=""
+_BGREEN=""
+_UGREEN=""
+
+_YELLOW=""
+_BYELLOW=""
+_UYELLOW=""
+
+_BLUE=""
+_BBLUE=""
+
+_PURPLE=""
+_BPURPLE=""
+_UPURPLE=""
+
+_CYAN=""
+_BCYAN=""
+_UCYAN=""
+
+_BOLD=""
+_UND=""
+
+if have_tty ; then
+    _NC='\033[0m'
+
+    _RED='\033[0;31m'
+    _BRED='\033[1;31m'
+    _URED='\033[4;31m'
+
+    _GREEN='\033[0;32m'
+    _BGREEN='\033[1;32m'
+    _UGREEN='\033[4;32m'
+
+    _YELLOW='\033[0;33m'
+    _BYELLOW='\033[1;33m'
+    _UYELLOW='\033[4;33m'
+
+    _BLUE='\033[0;34m'
+    _BBLUE='\033[1;34m'
+
+    _PURPLE='\033[0;35m'
+    _BPURPLE='\033[1;35m'
+    _UPURPLE='\033[4;35m'
+
+    _CYAN='\033[0;36m'
+    _BCYAN='\033[1;36m'
+    _UCYAN='\033[4;36m'
+
+    _BOLD='\033[1m'
+    _UND='\033[4m'
+fi
+
+print_bold() {
+    echo -e "${_BOLD}${*}${_NC}"
+}
+print_und() {
+    echo -e "${_UND}${*}${_NC}"
+}
+print_boldund() {
+    echo -e "${_BOLD}${_UND}${*}${_NC}"
+}
+print_red() {
+    echo -e "${_RED}${*}${_NC}"
+}
+print_bred() {
+    echo -e "${_BRED}${*}${_NC}"
+}
+print_green() {
+    echo -e "${_GREEN}${*}${_NC}"
+}
+print_bgreen() {
+    echo -e "${_BGREEN}${*}${_NC}"
+}
+print_yellow() {
+    echo -e "${_YELLOW}${*}${_NC}"
+}
+print_byellow() {
+    echo -e "${_BYELLOW}${*}${_NC}"
+}
+print_blue() {
+    echo -e "${_BLUE}${*}${_NC}"
+}
+print_bblue() {
+    echo -e "${_BBLUE}${*}${_NC}"
+}
+print_purple() {
+    echo -e "${_PURPLE}${*}${_NC}"
+}
+print_bpurple() {
+    echo -e "${_BPURPLE}${*}${_NC}"
+}
