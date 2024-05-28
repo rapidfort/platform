@@ -2,6 +2,7 @@
 1. Launch Debian 12 EC2 instance, 8 cores, 16GB RAM, 512GB disk, internet access
 2. Bootstrap VM
     ```
+    sudo su -
     apt update
     apt install git -y
     git clone https://github.com/rapidfort/platform
