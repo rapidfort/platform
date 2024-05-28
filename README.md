@@ -1,8 +1,17 @@
-# RapidFort platform installation guide
-
-1. update override-user.yaml
-2. update override-images.yaml
-
-# Run installer script
-
-$ ./install.sh
+# RapidFort Platform Installation Guide
+1. Launch Debian 12 EC2 instance, 8 cores, 16GB RAM, 512GB disk, internet access
+2. Bootstrap VM
+    ```
+    apt update
+    apt install git -y
+    git clone https://github.com/rapidfort/platform
+    cd platform
+    ./install_dependencies.sh
+3. Create secret.yaml (contents provided by RapidFort)
+4. Create user.yaml (contents provided by RapidFort)
+5. Create image.yaml (contents provided by RapidFort)
+6. Deploy Platform
+    ```
+    ./deploy_platform.sh
+    watch kubectl get pods
+    ```
