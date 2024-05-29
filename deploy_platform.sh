@@ -17,8 +17,8 @@ done
 QUAY_DOCKER_REGISTRY=quay.io/rapidfort
 
 print_bgreen "Attempting login to quay.io automatically"
-RF_QUAY_USERNAME=$(grep '\.dockerconfigjson' secret.yaml | awk '{print $2}' | base64 -d | jq -r '.auths["quay.io"].auth' | base64 -d | awk -F: '{print $1}')
-RF_QUAY_PASSWORD=$(grep '\.dockerconfigjson' secret.yaml | awk '{print $2}' | base64 -d | jq -r '.auths["quay.io"].auth' | base64 -d | awk -F: '{print $2}')
+RF_QUAY_USERNAME=$(grep '\.dockerconfigjson' secret.yaml | awk '{print $2}' | base64 -d | jq -r '.auths["quay.io/rapidfort"].auth' | base64 -d | awk -F: '{print $1}')
+RF_QUAY_PASSWORD=$(grep '\.dockerconfigjson' secret.yaml | awk '{print $2}' | base64 -d | jq -r '.auths["quay.io/rapidfort"].auth' | base64 -d | awk -F: '{print $2}')
 
 if [ -z "$RF_QUAY_USERNAME" ] || [ -z "$RF_QUAY_PASSWORD" ]; then
   print_bred "Calculating Quay username or password failed, exiting..."
