@@ -129,7 +129,7 @@ init() {
                     kubectl_install
                 fi
             else
-                print_bred "NotSupported: $(get_os_str) $(get_architecture) To Do"
+                print_bred "NotSupported: $ID $(get_os_str) $(get_architecture) To Do"
                 exit 1
             fi
         fi
