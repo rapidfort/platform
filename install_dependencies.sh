@@ -106,7 +106,7 @@ init() {
     if [ "$(get_os_str)" = "linux" ]; then
         if [ -f /etc/os-release ]; then
             source /etc/os-release
-            if [ "$ID" = "debian" ]; then
+            if [ "$ID" = "debian" ] || [ "$ID" = "ubuntu" ]; then
                 debian_init
 
                 if [ $update ] || [ -z "$(command -v docker)" ]; then
