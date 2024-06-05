@@ -128,7 +128,9 @@ init() {
                 if [ $update ] || [ -z "$(command -v kubectl)" ]; then
                     kubectl_install
                 fi
-
+            else
+                print_bred "NotSupported: $(get_os_str) $(get_architecture) To Do"
+                exit 1
             fi
         fi
     elif [ "$(get_os_str)" = "darwin" ]; then
@@ -136,6 +138,7 @@ init() {
         exit 1
     else
         print_bred "NotSupported: $(get_os_str) $(get_architecture) To Do"
+        exit 1
     fi
 
     # install aliases
