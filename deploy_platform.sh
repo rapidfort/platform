@@ -32,7 +32,7 @@ if ! kind get clusters | grep rapidfort-platform > /dev/null; then
   print_bgreen "Starting kind"
   kind create cluster --name rapidfort-platform --config kind-config.yaml --wait 8m
 
-  print_bgreen "Ingress start"
+  print_bgreen "Deploying and starting Ingress"
   kubectl apply -f ingress-nginx.yaml
 
   kubectl wait --namespace ingress-nginx \
@@ -44,12 +44,15 @@ if ! kind get clusters | grep rapidfort-platform > /dev/null; then
   kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
 fi
 
-print_bgreen "Install Image Pull Secret"
+print_bgreen "Installing Image Pull Secret"
 kubectl apply -f secret.yaml
 
-print_bgreen "Deploy RapidFort platform"
+print_bgreen "Deploying RapidFort platform"
 helm upgrade --install rapidfort oci://quay.io/rapidfort/rapidfort-platform -f image.yaml -f user.yaml
 
+print_bgreen "Waiting 5 minutes for platform to start..."
+sleep 20
+kubectl rollout status deployment --timeout=5m
 
 
 
