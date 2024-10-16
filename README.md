@@ -16,3 +16,7 @@
     ./deploy_platform.sh
     watch kubectl get pods
     ```
+7. Create Admin User
+    ```
+    ./bootstrap_admin_user.sh "<Company Name>"
+    ```
