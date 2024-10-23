@@ -48,7 +48,7 @@ print_bgreen "Installing Image Pull Secret"
 kubectl apply -f secret.yaml
 
 print_bgreen "Deploying RapidFort platform"
-helm upgrade --install rapidfort oci://quay.io/rapidfort/platform -f image.yaml -f user.yaml
+helm upgrade --install rapidfort-platform oci://quay.io/rapidfort/platform -f image.yaml -f user.yaml
 
 print_bgreen "Waiting 5 minutes for platform to start..."
 sleep 20
