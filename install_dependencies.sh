@@ -1,9 +1,9 @@
 #!/bin/bash -e
 # shellcheck disable=SC1091
 
-YQ_RELEASE=v4.44.1
-KIND_RELEASE=v0.23.0
-HELM_RELEASE=v3.15.0
+YQ_RELEASE=v4.44.3
+KIND_RELEASE=v0.24.0
+HELM_RELEASE=v3.15.4
 
 source .pretty_print
 
