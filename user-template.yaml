@@ -1,0 +1,15 @@
+global:
+  admin: "YOUR_ADMIN@EMAILADDRESS.com"
+  passwd: "YOUR_PASSWORD"
+  hostname: "YOUR VM HOSTNAME OR IP ADDRESS"
+  local:
+    storage: /opt/rapidfort/local-bucket
+  cloud: "kind"
+  imagePullSecrets: rapidfort-onprem-ex-pull-secret
+  aws: {}
+  gcp: {}
+  azure: {}
+  api_key: "ANY_SIMPLE_STRING_YOU_WANT"
+
+mysql:
+  enabled: true

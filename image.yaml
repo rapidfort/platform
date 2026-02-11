@@ -1,0 +1,42 @@
+aggregator:
+  image: quay.io/rapidfort/aggregator-exe:1.2.295-1
+backend:
+  image: quay.io/rapidfort/backend-exe:1.2.295-1
+documentation:
+  image: quay.io/rapidfort/documentation:1.2.295-1
+fileupload:
+  image: quay.io/rapidfort/fileupload:1.2.295-1
+frontrow:
+  image: quay.io/rapidfort/frontrow:1.2.295-1
+isomaster:
+  image: quay.io/rapidfort/iso-master-exe:1.2.295-1
+pulse:
+  image: quay.io/rapidfort/pulse
+pulseapi:
+  image: quay.io/rapidfort/pulseapi
+rfapi:
+  image: quay.io/rapidfort/rfapi-exe:1.2.295-1
+rfpubsub:
+  image: quay.io/rapidfort/rfpubsub-exe:1.2.295-1
+rfscan:
+  image: quay.io/rapidfort/rf-scan-exe:1.2.295-1
+rfx:
+  image: quay.io/rapidfort/rfx:1.2.295-1
+runner:
+  image: quay.io/rapidfort/runner:1.2.295-1
+rfvdb:
+  image: quay.io/rapidfort/rfvdb
+vulnsdb:
+  image: quay.io/rapidfort/vulns-db:1.2.295-1
+mysql:
+  image: quay.io/rapidfort/mysql:8.0-oraclelinux9
+init:
+  image: quay.io/rapidfort/init:latest
+filesredis:
+  image: quay.io/rapidfort/redis:7.2.9-alpine3.20-rfcurated-rfhardened
+redis:
+  image: quay.io/rapidfort/redis:7.2.9-alpine3.20-rfcurated-rfhardened
+lockredis:
+  image: quay.io/rapidfort/redis:7.2.9-alpine3.20-rfcurated-rfhardened
+keycloak:
+  image: quay.io/rapidfort/rfauth:10.30.24
